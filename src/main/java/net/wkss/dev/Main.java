@@ -27,23 +27,25 @@ public class Main {
                 .login();
 
         String line = "\n";
-        final String username, name, picture_url, biography, external_url;
+        final String username, name, picture_url, biography, external_url, scanData;
         final int account_type, followers, following, media_count;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter here a username of person: ");
+        scanData = scanner.next();
 
-        username = client.getActions().users().findByUsername(scanner.next()).get().getUser().getUsername();
-        name = client.getActions().users().findByUsername(scanner.next()).get().getUser().getFull_name();
-        picture_url = client.getActions().users().findByUsername(scanner.next()).get().getUser().getProfile_pic_url();
-        biography = client.getActions().users().findByUsername(scanner.next()).get().getUser().getBiography();
-        external_url = client.getActions().users().findByUsername(scanner.next()).get().getUser().getExternal_url();
-        account_type = client.getActions().users().findByUsername(scanner.next()).get().getUser().getAccount_type();
-        followers = client.getActions().users().findByUsername(scanner.next()).get().getUser().getFollower_count();
-        following = client.getActions().users().findByUsername(scanner.next()).get().getUser().getFollowing_count();
-        media_count = client.getActions().users().findByUsername(scanner.next()).get().getUser().getMedia_count();
+        username = client.getActions().users().findByUsername(scanData).get().getUser().getUsername();
+        name = client.getActions().users().findByUsername(scanData).get().getUser().getFull_name();
+        picture_url = client.getActions().users().findByUsername(scanData).get().getUser().getProfile_pic_url();
+        biography = client.getActions().users().findByUsername(scanData).get().getUser().getBiography();
+        external_url = client.getActions().users().findByUsername(scanData).get().getUser().getExternal_url();
+        account_type = client.getActions().users().findByUsername(scanData).get().getUser().getAccount_type();
+        followers = client.getActions().users().findByUsername(scanData).get().getUser().getFollower_count();
+        following = client.getActions().users().findByUsername(scanData).get().getUser().getFollowing_count();
+        media_count = client.getActions().users().findByUsername(scanData).get().getUser().getMedia_count();
 
-        System.out.println("Username: " + username + line +
+        System.out.println(
+                "Username: " + username + line +
                 "Name: " + name + line +
                 "Picture URL: " + picture_url + line +
                 "External URL:" + external_url + line +
