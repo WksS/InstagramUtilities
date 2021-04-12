@@ -1,0 +1,2 @@
+net/wkss/dev/Main.java
+ net.wkss.dev.Main
